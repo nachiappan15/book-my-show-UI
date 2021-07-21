@@ -35,7 +35,7 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <div className="container mx-auto  lg:my-14 my-6 lg:px-24 px-4l g:pb-12">
+            <div className="container mx-auto  lg:my-14 my-6 lg:px-24 px-4 g:pb-12">
                 <ReusableCarousel images={TempData} title="Online Streaming Events" />
             </div>
 

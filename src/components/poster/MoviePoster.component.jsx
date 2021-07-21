@@ -2,7 +2,7 @@ import React from 'react'
 
 export const MoviePoster = (props) => {
     return (<>
-        <div className = "flex flex-col  px-2 md:px-4">
+        <div className = "flex flex-col  px-2 md:px-4 mt-2">
             <div className= "h-40 md:h-80">
                 <img src={props.src} alt={props.title} className ="w-full h-full rounded-md"/>
             </div>

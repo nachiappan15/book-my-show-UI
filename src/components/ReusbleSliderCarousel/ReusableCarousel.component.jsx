@@ -22,7 +22,7 @@ export const ReusableCarousel = (props) => {
                     <p className={`lg:text-xl text-base ${props.isDark ? "text-white":"text-gray-700"} `}>{props.subtitle}</p>
                 </div>
             
-            <div className=" mx-auto   mt-1">
+            <div className=" mx-auto ">
                 <Slider {...sliderConfig}>
                     {props.images.map(image => {
                         return (<>
