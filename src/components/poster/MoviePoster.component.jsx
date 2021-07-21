@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Poster = (props) => {
+export const MoviePoster = (props) => {
     return (<>
         <div className = "flex flex-col  px-2 md:px-4">
             <div className= "h-40 md:h-80">
@@ -15,4 +15,4 @@ export const Poster = (props) => {
         </>
     );
 }
-export default Poster;
+export default MoviePoster;

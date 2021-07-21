@@ -8,21 +8,21 @@ const settings = {
         {
             breakpoint: 1400,
             settings: {
-                slidesToShow: 4,
+                slidesToShow:   5,
                 slidesToScroll: 3
             }
         },
         {
             breakpoint: 1100,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 4,
                 slidesToScroll: 3
             }
         },
         {
             breakpoint: 768,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 4,
                 slidesToScroll: 1
             }
         },
@@ -36,5 +36,5 @@ const settings = {
 
     ]
 };
-
-export default settings;
+ 
+export default  settings;

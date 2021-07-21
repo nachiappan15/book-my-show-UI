@@ -7,7 +7,7 @@ const MovieHero = () => {
         <>
             <div className="">
 
-
+                {/* desktop */}
                 <div className="hidden relative lg:block w-full object-cover object-bottom" style={{ height: "calc(30rem)" }}>{/*desktop*/}
 
                     <div className="absolute h-full w-full z-10"

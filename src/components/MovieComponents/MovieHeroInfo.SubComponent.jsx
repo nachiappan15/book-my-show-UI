@@ -15,17 +15,17 @@ const MovieHeroInfo = () => {
 
                 <h1 className="text-white font-bold text-4xl hidden lg:block">Zack Snyder`s Justice League</h1>
 
-                <div className= "flex flex-col lg:gap-8 flex-col-reverse gap-3">
+                <div className= "flex lg:flex-col lg:gap-8 flex-col-reverse gap-3">
                     <div className="flex flex-col gap-3">
                         <h4 className="text-gray-300 lg:text-base text-xs">English &bull; Languages: <span className="text-red-500">Audio(1),Subtitles(1)</span> </h4>
                         <h4 className="text-white lg:text-base text-xs">4h 1m &bull; Action,Adventure,Fantasy &bull; 16+ &bull; 18 Mar ,  2021</h4>
                     </div>
 
                     <div className="hidden justify-around w-full lg:flex">
-                        <button className="bg-signIn text-white rounded-xl lg:text-lg lg:w-56 lg:h-10" >
+                        <button className="bg-signIn text-white rounded-xl lg:text-lg lg:w-56 lg:h-12" >
                             Rent &#x20B9;149
                         </button>
-                        <button className="bg-signIn text-white rounded-xl lg:text-lg lg:w-56 lg:h-10 ">
+                        <button className="bg-signIn text-white rounded-xl lg:text-lg lg:w-56 lg:h-12 ">
                             Buy &#x20B9;689
                         </button>
                         

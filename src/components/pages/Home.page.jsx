@@ -26,24 +26,24 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <div className="bg-premier  my-14">
+            <div className="bg-premier  lg:my-14 my-6">
                 <div className="w-3/4 mx-auto pt-10 hidden md:block">
                     <img src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png" alt="" className="h-full w-full" />
                 </div>
-                <div className="container mx-auto ">
+                <div className="container mx-auto mt-5 lg:px-24 px-4 lg:pb-12">
                     <ReusableCarousel images={TempData} title="Premieres" subtitle="Brand new releases every friday" isDark />
                 </div>
             </div>
 
-            <div className="container mx-auto  my-14">
+            <div className="container mx-auto  lg:my-14 my-6 lg:px-24 px-4l g:pb-12">
                 <ReusableCarousel images={TempData} title="Online Streaming Events" />
             </div>
 
-            <div className="container mx-auto  my-14">
+            <div className="container mx-auto  lg:my-14 my-6 lg:px-24 px-4 lg:pb-12">
                 <ReusableCarousel images={TempData} title="OutDoor Events" />
             </div>
 
-            <div className="container mx-auto  my-14">
+            <div className="container mx-auto  lg:my-14 my-6 lg:px-24 px-4 lg:pb-12">
                 <ReusableCarousel images={TempData} title="Laughter Therapy" />
             </div>
 

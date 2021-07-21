@@ -13,6 +13,8 @@ import DefaultHOC from './HOC/Default.HOC';
 import MovieHOC from './HOC/Movie.HOC';
 import HomePage from './components/pages/Home.page';
 import MoviesPage from './components/pages/Movies.page';
+import Playspage from './components/pages/Plays.page';
+
 
 
 
@@ -24,6 +26,7 @@ function App() {
       <BrowserRouter>
         <DefaultHOC path = "/" exact component ={HomePage}  />
         <MovieHOC path = "/movies/:id" exact component ={MoviesPage}  />
+        <DefaultHOC path = "/plays" exact component ={Playspage}  />
       </BrowserRouter>
     </div>
 

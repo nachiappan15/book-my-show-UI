@@ -1,7 +1,9 @@
-const settings = {
+
+
+const MoviePagePosterCarousel =   {
     Infinity: false,
     autoPlay: false,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
@@ -37,4 +39,5 @@ const settings = {
     ]
 };
 
-export default settings;
+
+export default MoviePagePosterCarousel;
