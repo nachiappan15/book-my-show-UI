@@ -1,15 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
 import { BiChevronLeft, BiChevronDown, BiSearch, BiMenu, BiShareAlt } from "react-icons/bi";
 
 
+// movie context
+import { MovieContext } from "../../context/Movie.context";
 
 const NavSm = () => {
+    const {movie} = useContext(MovieContext);
+
     return (
         <>
             <div className="flex items-center  justify-between my-1">
                 <div className=" flex items-center text-white">
                 <BiChevronLeft className= "h-7 w-7 mr-2"/>
-                    <h3 className=" text-lg "> It All Starts Here!</h3>
+                    <h3 className=" text-lg "> {movie.original_title}</h3>
                 </div>
                 <div className="w-8 h-8">
                     <BiShareAlt className="text-white w-full h-full" />

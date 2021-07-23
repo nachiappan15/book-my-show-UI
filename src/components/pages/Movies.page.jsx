@@ -1,16 +1,56 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 // components
 import MovieHero from '../MovieComponents/MovieHero.component';
 import { GrPaypal } from "react-icons/gr"
 import { FaCcVisa } from "react-icons/fa"
 import ReusableCircleCarousel from '../ReusbleSliderCarousel/ReusableCircleCarousel.component';
-import cast from '../../data/TempCastData';
 import TempData from '../../data/TempData';
 import ReusableCarousel from '../ReusbleSliderCarousel/ReusableCarousel.component';
 import MoviePagePosterCarousel from '../../config/MoviePagePosterCarousel';
+// movie context
+import { MovieContext } from "../../context/Movie.context";
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 
 export const MoviesPage = () => {
+    const { id } = useParams();
+    const { movie } = useContext(MovieContext);
+    const [cast, setCast] = useState([]);
+    const [crew, setcrew] = useState([]);
+    // hook
+
+    useEffect(() => {
+        const requestCast = async () => {
+            const getCast = await axios.get(`movie/${id}/credits`);
+            setCast(getCast.data.cast);
+            setcrew(getCast.data.crew)
+        };
+        requestCast();
+    }, [id]);
+
+    // movies hook
+    const [similarMovies, setSimilarMovies] = useState([]);
+    const [recommendedMovies, setRecommendedMovies] = useState([])
+    // SimilarMovies Movies
+    useEffect(() => {
+        const requestRecommendedMovies = async () => {
+            const getRecommendedMovies = await axios.get(`/movie/${id}/similar`);
+            setRecommendedMovies(getRecommendedMovies.data.results);
+            console.log(getRecommendedMovies);
+        }
+        requestRecommendedMovies();
+    }, [id]);
+     // SimilarMovies Movies
+     useEffect(() => {
+        const requestSimilarMovies = async () => {
+            const getSimilarMovies = await axios.get(`/movie/${id}/recommendations`);
+            setSimilarMovies(getSimilarMovies.data.results);
+            console.log(getSimilarMovies);
+        }
+        requestSimilarMovies();
+    }, [id])
+
     return (
         <>
             <MovieHero />
@@ -19,7 +59,7 @@ export const MoviesPage = () => {
                     <h1 className="text-2xl font-bold my-4 text-gray-700">
                         About the Movie
                     </h1>
-                    <p className="tetx-lg my-4">Bruce Wayne and Diana Prince try to bring the metahumans of Earth together after the death of Clark Kent. Meanwhile, Darkseid sends Steppenwolf to Earth with an army to subjugate humans.</p>
+                    <p className="tetx-lg my-4">{movie.overview}</p>
                 </div>
 
 
@@ -51,16 +91,16 @@ export const MoviesPage = () => {
                 </div>
                 <div className="my-10">
                     <h1 className="text-lg lg:text-2xl font-bold my-4 text-gray-700 ">Crew</h1>
-                    <ReusableCircleCarousel details={cast} />
+                    <ReusableCircleCarousel details={crew} />
                 </div>
 
 
                 <div className="my-10">
-                    <ReusableCarousel images={TempData} title="You might also like" config = {MoviePagePosterCarousel}/>
+                    <ReusableCarousel images={similarMovies} title="You might also like" config={MoviePagePosterCarousel} />
                 </div>
 
                 <div className="my-10">
-                    <ReusableCarousel images={TempData} title="BMX EXCLUSIVE" config = {MoviePagePosterCarousel}/>
+                    <ReusableCarousel images={recommendedMovies} title="BMX EXCLUSIVE" config={MoviePagePosterCarousel} />
                 </div>
 
 

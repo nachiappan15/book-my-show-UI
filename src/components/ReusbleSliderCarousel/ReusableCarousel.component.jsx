@@ -23,10 +23,10 @@ export const ReusableCarousel = (props) => {
                 </div>
             
             <div className=" mx-auto ">
-                <Slider {...sliderConfig}>
-                    {props.images.map(image => {
+                <Slider {...sliderConfig} >
+                    {props.images.map((image) => {
                         return (<>
-                            <MoviePoster{...image} isDark = {props.isDark} />
+                            <MoviePoster {...image} isDark = {props.isDark}/>
                         </>);
                     })}
                 </Slider>
